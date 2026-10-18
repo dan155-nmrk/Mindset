@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mindset Quest">
+<meta name="theme-color" content="#14102b">
+<title>Mindset Quest</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMzYTJmN2EiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxNDEwMmIiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iZiIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmNWU3ZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmOWEzYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSJ1cmwoI2IpIi8+PHBhdGggZD0iTTUwIDE0QzU3IDMxIDc0IDQwIDc0IDYxQzc0IDc3IDYzIDg3IDUwIDg3QzM3IDg3IDI2IDc3IDI2IDYxQzI2IDUxIDMyIDQ0IDM3IDM3QzM5IDQ1IDQ0IDQ3IDQ2IDQ1QzQ4IDM2IDQ2IDI1IDUwIDE0WiIgZmlsbD0idXJsKCNmKSIvPjxwYXRoIGQ9Ik01MCA1MEM1NCA1OCA2MiA2MiA2MiA3MUM2MiA3OSA1NiA4NCA1MCA4NEM0NCA4NCAzOCA3OSAzOCA3MUMzOCA2NSA0MiA2MSA0NSA1N0M0NiA2MSA0OCA2MiA0OSA2MUM1MCA1OCA0OSA1NCA1MCA1MFoiIGZpbGw9IiNmZmQxNjYiLz48L3N2Zz4K">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<style>
+:root{--bg:#14102b;--card:#1e1840;--card2:#2a2257;--line:#3a3070;--text:#f4f0ff;--muted:#a79fd1;--accent:#ff9a3c;--accent2:#ff5e7e;--ok:#5be3a0;--warn:#ffd166;--bad:#ff6b81;color-scheme:dark}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;font-size:15px;line-height:1.4}
+body{min-height:100vh;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+body.lock{overflow:hidden}
+#app{max-width:480px;margin:0 auto;padding:14px 14px 80px}
+h1,h2,h3{margin:0}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.logo{font-weight:800;letter-spacing:.12em;font-size:15px}
+.ib{background:var(--card);border:1px solid var(--line);color:var(--text);width:40px;height:40px;border-radius:12px;font-size:18px;cursor:pointer}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px}
+.hero{background:linear-gradient(160deg,#3a2a7a,#1e1840 70%);border:1px solid var(--line);border-radius:22px;padding:20px 16px;margin-bottom:12px;text-align:center}
+.flame{font-size:34px}
+.big{font-size:64px;font-weight:800;line-height:1;margin:2px 0}
+.lbl{letter-spacing:.14em;font-size:12px;color:var(--muted);font-weight:700}
+.lvl{display:inline-block;margin-top:10px;background:var(--card2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:700;letter-spacing:.06em}
+.bar{height:10px;background:#120d2a;border-radius:6px;overflow:hidden;margin-top:12px}
+.bar.sm{height:8px;margin-top:6px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:6px}
+.bar i.bad{background:var(--bad)}
+.sub{color:var(--muted);font-size:12px;margin-top:8px}
+.st{border-radius:18px;padding:14px;margin-bottom:12px;border:1px solid}
+.st.open{background:rgba(91,227,160,.10);border-color:rgba(91,227,160,.45)}
+.st.empty,.st.full,.st.jolly{background:rgba(255,209,102,.10);border-color:rgba(255,209,102,.45)}
+.st.blocked,.st.breach{background:rgba(255,107,129,.10);border-color:rgba(255,107,129,.5)}
+.st.gameover{background:rgba(255,60,90,.16);border-color:#ff3c5a;border-width:2px}
+.tag.go{background:#ff3c5a;color:#fff}
+.st.plain{background:var(--card);border-color:var(--line)}
+.st.plain .bh{margin-top:0}
+.st .t{font-weight:800;font-size:17px}
+.st .d{color:var(--muted);margin-top:4px;font-size:13px}
+.bh{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:12px}
+.bh b{color:var(--text)}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.acts .wide{grid-column:1/3}
+.btn{border:0;border-radius:14px;padding:14px;font-size:15px;font-weight:700;color:var(--text);background:var(--card2);cursor:pointer;width:100%}
+.btn.pri{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#1a1030}
+.btn.ghost{background:transparent;border:1px solid var(--line)}
+.btn.danger{background:var(--bad);color:#1a1030}
+.btn:disabled{opacity:.4}
+.spurgo{display:block;width:100%;border:0;border-radius:22px;padding:26px 16px;font-size:28px;font-weight:800;letter-spacing:.14em;background:linear-gradient(90deg,var(--ok),#3ab7ff);color:#062418;cursor:pointer;box-shadow:0 6px 22px rgba(91,227,160,.28);font-family:inherit}
+.spurgo small{display:block;font-size:13px;letter-spacing:0;font-weight:700;margin-top:6px;opacity:.85}
+.spurgo.done{background:var(--card2);color:var(--ok);border:2px solid var(--ok);box-shadow:none;cursor:default}
+.undo{background:none;border:0;color:var(--muted);font-size:12px;text-decoration:underline;padding:8px;cursor:pointer;display:block;margin:0 auto}
+.spcount{text-align:center;font-size:12px;color:var(--muted);margin:8px 0 12px}
+.acts2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.btn.sm{padding:10px;font-size:13px;font-weight:600;background:transparent;border:1px solid var(--line);color:var(--muted)}
+.btn.sm:disabled{opacity:.3}
+.map{overflow-x:auto;padding:6px 0 12px;scrollbar-width:thin;scrollbar-color:#4a3f8f transparent}
+.map::-webkit-scrollbar{height:6px}.map::-webkit-scrollbar-thumb{background:#4a3f8f;border-radius:4px}
+.track{display:flex;width:max-content;padding:0 6px}
+.node{position:relative;flex:0 0 84px;background:none;border:0;color:var(--muted);font-family:inherit;cursor:pointer;padding:0}
+.node:not(:first-child)::before{content:'';position:absolute;top:26px;right:50%;width:100%;height:4px;background:#2c2560}
+.node.done::before,.node.cur::before{background:#ffb703}
+.circ{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:56px;height:56px;margin:0 auto;border-radius:50%;background:#1b1538;border:3px solid #2c2560;font-size:20px;font-weight:800;color:#6f66a8}
+.node.done .circ{background:#ffb703;border-color:#ffb703;color:#2a1a00}
+.node.cur .circ{background:#1b1538;border-color:#ffb703;color:#ffb703;box-shadow:0 0 14px rgba(255,183,3,.45)}
+.node.sel .nl{color:var(--text)}
+.nl{display:block;margin-top:8px;font-size:12px;line-height:1.2}
+.lvinfo .n{font-weight:800;font-size:14px;color:#ffb703}
+.lvinfo .nt{font-size:13px;color:var(--muted);margin-top:4px}
+.lvinfo .rw{font-size:13px;color:var(--warn);margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 6px;text-align:center}
+.stat b{display:block;font-size:22px}
+.stat span{font-size:11px;color:var(--muted)}
+.sec{font-weight:800;letter-spacing:.08em;font-size:13px;margin:18px 2px 8px}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.lv{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.lv:first-child{border-top:0}
+.dot{flex:0 0 28px;height:28px;border-radius:50%;background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
+.lv.done .dot{background:var(--ok);color:#10301f}
+.lv.cur .dot{background:var(--accent);color:#2a1500}
+.lv.lock{opacity:.55}
+.lv .n{font-weight:800;font-size:14px}
+.lv .nt{font-size:12px;color:var(--muted)}
+.lv .rw{font-size:12px;color:var(--warn);margin-top:2px}
+.badges{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bdg{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center}
+.bdg .ic{font-size:26px}
+.bdg .bn{font-weight:700;font-size:13px}
+.bdg .bd{font-size:11px;color:var(--muted)}
+.bdg.lock{opacity:.8}
+.bdg.lock .ic{filter:grayscale(1);opacity:.55}
+.day{border-top:1px solid var(--line);padding:10px 0}
+.day:first-child{border-top:0}
+.dh{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.du{margin-left:auto;font-weight:800}
+.tag{font-size:10px;font-weight:800;padding:2px 7px;border-radius:10px;letter-spacing:.04em}
+.tag.bad{background:var(--bad);color:#2a0710}
+.tag.warn{background:var(--warn);color:#2a2000}
+.tag.ok{background:var(--ok);color:#10301f}
+.dr{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:13px}
+.dr .x{margin-left:auto}
+.dr .nt{font-size:11px;color:var(--muted)}
+.x{background:none;border:0;color:var(--muted);font-size:15px;padding:4px 8px;cursor:pointer}
+details.card summary{font-weight:800;cursor:pointer}
+details.card ul{margin:10px 0 0;padding-left:18px}
+details.card li{margin:4px 0;font-size:13px;color:var(--muted)}
+details.card li b{color:var(--text)}
+.ov{position:fixed;inset:0;background:rgba(5,3,15,.7);z-index:10}
+.sheet{position:fixed;left:0;right:0;bottom:0;max-width:480px;margin:0 auto;background:var(--card);border-radius:22px 22px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom));z-index:11;max-height:92vh;overflow:auto;border:1px solid var(--line)}
+.sheet h3{font-size:18px;margin-bottom:8px}
+.row{display:flex;gap:10px;margin-top:14px}
+label{display:block;font-size:12px;color:var(--muted);margin:12px 0 4px;font-weight:700}
+input,textarea{width:100%;background:#120d2a;border:1px solid var(--line);border-radius:12px;color:var(--text);padding:11px 12px;font-size:16px;font-family:inherit}
+input[type=checkbox]{width:auto}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pp{background:#120d2a;border:2px solid var(--line);border-radius:14px;padding:10px;text-align:left;color:var(--text);cursor:pointer;font-size:13px}
+.pp.on{border-color:var(--accent);background:var(--card2)}
+.pp b{display:block;font-size:15px}
+.tabs{display:flex;gap:8px;margin:8px 0 10px}
+.tabs button{flex:1;padding:9px;border-radius:12px;border:1px solid var(--line);background:transparent;color:var(--muted);font-weight:700;cursor:pointer}
+.tabs button.on{background:var(--card2);color:var(--text);border-color:var(--accent)}
+.qty{display:flex;align-items:center;gap:14px;margin-top:6px}
+.qty button{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:var(--card2);color:var(--text);font-size:20px;cursor:pointer}
+.qty b{font-size:20px;min-width:24px;text-align:center}
+.tot{margin-top:12px;background:#120d2a;border-radius:12px;padding:10px 12px;display:flex;justify-content:space-between;font-weight:800}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chips button{border-radius:16px;border:1px solid var(--line);background:transparent;color:var(--muted);padding:6px 11px;font-size:12px;cursor:pointer}
+.chips button.on{background:var(--card2);color:var(--text);border-color:var(--accent)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:#fff;color:#1a1030;padding:10px 16px;border-radius:20px;font-weight:700;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:30;max-width:90%;text-align:center}
+#toast.show{opacity:1;transform:translateX(-50%)}
+.center{text-align:center}
+.ob{padding-top:20px}
+.ob .flame{font-size:54px}
+.ob h1{font-size:26px;letter-spacing:.1em;margin:6px 0}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="modal"></div>
+<div id="toast"></div>
+<script>
+// ENGINE-START
+const DAY=86400000;
+function dn(s){const p=s.split('-').map(Number);return Math.round(Date.UTC(p[0],p[1]-1,p[2])/DAY);}
+function ds(n){return new Date(n*DAY).toISOString().slice(0,10);}
+function defaultSettings(){return{evening:3,week:4,festEvening:6,festWeek:10,fullLock:3,breachLock:7,gameOverUnits:6,gameOverLock:14,jollyPerYear:5,reviewDays:90,reviewLimit:3,zeroAfterFull:true,
+ periods:[{kind:'festivo',from:'12-23',to:'01-06'},{kind:'festivo',from:'08-10',to:'08-20'},{kind:'spurgo',from:'01-07',to:'02-06'},{kind:'spurgo',from:'09-01',to:'10-01'}]};}
+// periodi ricorrenti ogni anno (MM-DD). festivo: fine inclusa. spurgo: fine esclusa. Lo spurgo vince sul festivo.
+function periodAt(D,st){
+  const md=ds(D).slice(5);let f=null;
+  for(const p of (st.periods||[])){
+    const a=p.from,b=p.to;let hit;
+    if(p.kind==='spurgo')hit=a<=b?(md>=a&&md<b):(md>=a||md<b);
+    else hit=a<=b?(md>=a&&md<=b):(md>=a||md<=b);
+    if(hit){if(p.kind==='spurgo')return 'spurgo';f='festivo';}
+  }
+  return f;
+}
+function spurgoEnd(D,st){let E=D;while(periodAt(E+1,st)==='spurgo')E++;return E;}
+function weekStart(D){return D-((D+3)%7);}
+const LEVELS=[
+ {d:0,n:"L'INIZIO",note:"Le regole le scrivi oggi, a mente fredda. Da qui è il tuo piano a decidere la serata, non l'umore del momento."},
+ {d:7,n:"IL PATTO",note:"Una settimana in regola. Ogni volta che ti fermi in tempo, dormi meglio e domani ti alleni con più testa e più gambe."},
+ {d:14,n:"LA REGOLA",note:"Due settimane. Svegliarti lucido e con le gambe che rispondono non è fortuna: è la somma delle sere in cui hai scelto tu."},
+ {d:28,n:"L'ABITUDINE",note:"Un mese. Meno calorie liquide, meno fame fuori controllo, un sonno più profondo. Il corpo se ne accorge prima della bilancia."},
+ {d:56,n:"LA SVOLTA",note:"Otto settimane. I muscoli che costruisci in palestra restano tuoi quando non li sabotano la notte e il recupero."},
+ {d:90,n:"LA VERIFICA",note:"90 giorni. Guarda i numeri: sonno, peso, passo in corsa. Se reggono, questo sistema non è una dieta, è il tuo modo di vivere."},
+ {d:120,n:"IL RITMO",note:"Quattro mesi. Allenamento, sonno e moderazione remano nella stessa direzione, e si sente a ogni uscita."},
+ {d:180,n:"LA MAESTRIA",note:"Sei mesi. Sai stare in una serata senza che sia lei a comandare. È l'allenamento più difficile, e lo stai vincendo."}
+];
+function compute(S,todayStr){
+  const st=S.settings,EPS=1e-9,t=dn(todayStr),start=dn(S.start);
+  const abEnd=S.abstainUntil?dn(S.abstainUntil):null;
+  const jollyDays=new Set(S.jollies.map(j=>dn(j.date)));
+  const allBy={},unitsBy={};
+  for(const d of S.drinks){const k=dn(d.date);allBy[k]=(allBy[k]||0)+d.units;if(!jollyDays.has(k))unitsBy[k]=(unitsBy[k]||0)+d.units;}
+  const winSum=D=>{let w=0;for(let k=weekStart(D);k<=D;k++)w+=unitsBy[k]||0;return w;};
+  const evCapOf=D=>periodAt(D,st)==='festivo'?st.festEvening:st.evening,wkCapOf=D=>periodAt(D,st)==='festivo'?st.festWeek:st.week;
+  let blk={until:-Infinity,kind:''},zero={until:-Infinity},last=null,pre=null,sub=0;
+  const breaches=[],fulls=[],gameOvers=[],days={};
+  for(let D=start;D<=t;D++){
+    if(D===t)pre={blk:{until:blk.until,kind:blk.kind},zero:{until:zero.until}};
+    const per=periodAt(D,st),evC=evCapOf(D),wkC=wkCapOf(D);
+    const info={units:allBy[D]||0,jolly:jollyDays.has(D),breach:false,gameOver:false,full:false,why:[],per:per};
+    const u=unitsBy[D]||0;
+    if(info.jolly){ if(D+st.fullLock>blk.until)blk={until:D+st.fullLock,kind:'jolly'}; }
+    else if(u>EPS){
+      const why=[];
+      if(per==='spurgo')why.push('spurgo');
+      else{
+        if(u>evC+EPS)why.push('serata');
+        if(winSum(D)>wkC+EPS)why.push('settimana');
+      }
+      if(D<=blk.until)why.push('blocco');
+      if(D<=zero.until)why.push('azzerata');
+      if(abEnd!==null&&D<=abEnd)why.push('astinenza');
+      if(why.length){
+        info.breach=true;info.why=why;breaches.push(D);last=D;
+        const go=u>=(per==='festivo'?st.festWeek:st.gameOverUnits)-EPS;
+        if(go){info.gameOver=true;gameOvers.push(D);}
+        const lk=go?st.gameOverLock:st.breachLock;
+        if(D+lk>blk.until)blk={until:D+lk,kind:go?'gameover':'breach'};
+      } else if(u>=evC-EPS){
+        info.full=true;fulls.push(D);
+        if(D+st.fullLock>blk.until)blk={until:D+st.fullLock,kind:'full'};
+        if(st.zeroAfterFull)zero={until:weekStart(D)+6};
+      } else sub++;
+    }
+    days[D]=info;
+  }
+  const base=last!==null?last:start;
+  const calDays=t>=start?t-base:0;
+  const soberToday=t>=start&&(S.sober||[]).some(x=>dn(x)===t)&&!(days[t]&&days[t].breach);
+  const daysN=calDays+(soberToday?1:0);
+  const pts=[start].concat(breaches,[t]);
+  let best=0;if(t>=start){for(let i=1;i<pts.length;i++)best=Math.max(best,pts[i]-pts[i-1]);}
+  if(soberToday)best=Math.max(best,daysN);
+  let lvlIdx=0;for(let i=0;i<LEVELS.length;i++)if(daysN>=LEVELS[i].d)lvlIdx=i;
+  const todayUnits=unitsBy[t]||0,win=t>=start?winSum(t):0;
+  const perT=periodAt(t,st),evCap=evCapOf(t),wkCap=wkCapOf(t);
+  const budgetLeft=Math.max(0,wkCap-win);
+  const eveningLeft=perT==='spurgo'?0:Math.max(0,Math.min(evCap-todayUnits,budgetLeft));
+  const ti=days[t]||{units:0,jolly:false,breach:false,full:false,why:[]};
+  let blockedToday=null;
+  if(pre){
+    const c=[];
+    if(t<=pre.blk.until)c.push({until:pre.blk.until,kind:pre.blk.kind});
+    if(t<=pre.zero.until)c.push({until:pre.zero.until,kind:'zero'});
+    if(abEnd!==null&&t<=abEnd)c.push({until:abEnd,kind:'abstain'});
+    if(perT==='spurgo')c.push({until:spurgoEnd(t,st),kind:'spurgo'});
+    if(c.length)blockedToday=c.reduce((a,b)=>b.until>a.until?b:a);
+  }
+  let nextFree=null;
+  for(let X=t+1;X<=t+90;X++){
+    if(X<=blk.until||X<=zero.until||(abEnd!==null&&X<=abEnd)||periodAt(X,st)==='spurgo')continue;
+    let w=0;for(let k=weekStart(X);k<=t;k++)w+=unitsBy[k]||0;
+    if(wkCapOf(X)-w>=1-EPS){nextFree=X;break;}
+  }
+  let kind='open';
+  if(t<start)kind='notstarted';
+  else if(ti.breach)kind=ti.gameOver?'gameover':'breach';
+  else if(ti.jolly)kind='jolly';
+  else if(blockedToday)kind='blocked';
+  else if(ti.full)kind='full';
+  else if(eveningLeft<=EPS)kind='empty';
+  const vStart=(abEnd!==null&&abEnd+1>start)?abEnd+1:start,vEnd=vStart+st.reviewDays;
+  let rU=0,rB=0,rJ=0,rS=0,rD=0;const rEnd=Math.min(t,vEnd-1);
+  for(let D=vStart;D<=rEnd;D++){if((allBy[D]||0)>EPS)rD++;rU+=unitsBy[D]||0;if(days[D]&&days[D].breach)rB++;if(jollyDays.has(D))rJ++;}
+  (S.sober||[]).forEach(s=>{const k=dn(s);if(k>=vStart&&k<=rEnd)rS++;});
+  const rDays=Math.max(0,rEnd-vStart+1);
+  const jollyUsed=S.jollies.filter(j=>dn(j.date)>t-365).length;
+  return{days,breaches,gameOvers,fulls,daysN,calDays,weeks:Math.floor(daysN/7),best,lvlIdx,todayUnits,win,budgetLeft,eveningLeft,per:perT,evCap,wkCap,kind,blockedToday,blk,zero,abEnd,nextFree,sub,
+    jollyLeft:Math.max(0,st.jollyPerYear-jollyUsed),
+    review:{vStart,vEnd,rDays,drinkDays:rD,units:rU,avgWeek:rDays>0?rU/(rDays/7):0,breaches:rB,jollies:rJ,sober:rS,
+      progress:Math.max(0,Math.min(1,(t-vStart)/st.reviewDays)),started:t>=vStart,done:t>=vEnd,dayNo:Math.max(0,t-vStart+1)}};
+}
+// ENGINE-END
+
+// ---------- UI ----------
+const KEY='mindsetQuest_v2';
+const PRESETS=[
+ {id:'bn',icon:'🍺',name:'Birra normale 33 cl',u:1},
+ {id:'ba',icon:'🍻',name:'Birra artigianale',u:2},
+ {id:'vi',icon:'🍷',name:'Calice di vino',u:1},
+ {id:'dr',icon:'🍹',name:'Drink (americano, spritz, gin tonic)',u:1.5},
+ {id:'sh',icon:'🥃',name:'Shot / amaro',u:1}
+];
+const LBL=['Inizio','1 Settimana','2 Settimane','1 Mese','2 Mesi','3 Mesi','4 Mesi','6 Mesi'];
+let selLvl=null,mapKeep=null;
+const JTYPES=['Settimana Pesante! (A lavoro)','Settimana Pesante! (Scelte di vita sbagliate)','Libero!','Evento Speciale!','Socialità Forzata!'];
+const LOGDAYS=7;
+const WHY={serata:'più unità del tetto per serata',settimana:'più unità del tetto settimanale',blocco:'sei in un periodo di blocco',azzerata:'la settimana era già chiusa',astinenza:'sei nel periodo senza alcol',spurgo:'è un periodo di spurgo totale'};
+const $=s=>document.querySelector(s);
+const app=$('#app');
+let S=load();
+let draft=null,jdraft=null,confirmResolve=null;
+
+function load(){try{const r=localStorage.getItem(KEY);if(r)return migrate(JSON.parse(r));}catch(e){}return null;}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function migrate(o){
+  if(!o||!o.start)return null;
+  o.settings=Object.assign(defaultSettings(),o.settings||{});
+  o.checkins=o.checkins||[];o.drinks=o.drinks||[];o.jollies=o.jollies||[];if(!Array.isArray(o.settings.periods))o.settings.periods=defaultSettings().periods;o.settings.periods.forEach(q=>{if(q.kind==='spurgo'&&q.from==='01-06')q.from='01-07';});o.sober=o.sober||[];o.rewards=o.rewards||{};
+  o.abstainUntil=o.abstainUntil||'';o.seenLevel=o.seenLevel||0;
+  return o;
+}
+function todayStr(){const d=new Date();d.setHours(d.getHours()-4);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+const WD=['dom','lun','mar','mer','gio','ven','sab'];
+function fmtDate(s){const n=typeof s==='number'?s:dn(s);const d=new Date(n*DAY);return WD[d.getUTCDay()]+' '+String(d.getUTCDate()).padStart(2,'0')+'/'+String(d.getUTCMonth()+1).padStart(2,'0');}
+function fmtU(x){return(Math.round(x*10)/10).toLocaleString('it-IT');}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7);}
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(()=>t.classList.remove('show'),2800);}
+function clone(o){return JSON.parse(JSON.stringify(o));}
+
+function openModal(html){$('#modal').innerHTML='<div class="ov" data-action="closeModal"></div><div class="sheet">'+html+'</div>';document.body.classList.add('lock');}
+let goResolve=null;
+function closeModal(){$('#modal').innerHTML='';document.body.classList.remove('lock');if(confirmResolve){const r=confirmResolve;confirmResolve=null;r(false);}if(goResolve){const r=goResolve;goResolve=null;r('no');}if(jtResolve){const r=jtResolve;jtResolve=null;r(null);}}
+function askGameOver(why,left){
+  return new Promise(res=>{
+    openModal('<div class="center"><div style="font-size:48px">💀</div><h3>GAME OVER?</h3><p class="muted">Motivo: '+why+'.<br><br>Il contatore va a 0, i livelli si rifanno da capo e scatta un blocco di '+S.settings.gameOverLock+' giorni.'+(left>0?'<br><br>Se è un\'occasione speciale usa un jolly: la serata non conta.':'')+'</p>'
+      +'<div class="row" style="flex-direction:column">'+(left>0?'<button class="btn pri" data-action="goJolly">🎟️ Usa un jolly ('+left+' rimasti)</button>':'')+'<button class="btn danger" data-action="goYes">Registra GAME OVER</button><button class="btn ghost" data-action="goNo">Annulla</button></div></div>');
+    goResolve=res;
+  });
+}
+function goAnswer(v){const r=goResolve;goResolve=null;$('#modal').innerHTML='';document.body.classList.remove('lock');if(r)r(v);}
+let jtResolve=null;
+function jollyTally(){const t=dn(todayStr()),m={};JTYPES.forEach(x=>m[x]=0);S.jollies.filter(j=>dn(j.date)>t-365).forEach(j=>{if(j.type in m)m[j.type]++;});return m;}
+function askJollyType(){
+  return new Promise(res=>{
+    const m=jollyTally();
+    openModal('<h3>Che jolly è?</h3><p class="muted small">Scegli il tipo: il totale resta di '+S.settings.jollyPerYear+' all\'anno.</p><div class="row" style="flex-direction:column">'
+      +JTYPES.map((x,i)=>'<button class="btn" data-action="jtPick" data-i="'+i+'">'+x+(m[x]?' · usato '+m[x]+'×':'')+'</button>').join('')+'<button class="btn ghost" data-action="closeModal">Annulla</button></div>');
+    jtResolve=res;
+  });
+}
+function askConfirm(title,text,ok,danger){
+  return new Promise(res=>{
+    openModal('<h3>'+title+'</h3><p class="muted">'+text+'</p><div class="row"><button class="btn ghost" data-action="cfNo">Annulla</button><button class="btn '+(danger?'danger':'pri')+'" data-action="cfYes">'+ok+'</button></div>');
+    confirmResolve=res;
+  });
+}
+
+// ---------- onboarding ----------
+function renderOnboarding(){
+  const t=todayStr();const ab='';
+  app.innerHTML=`<div class="ob center">
+   <div class="flame">🧠</div><h1>MINDSET QUEST</h1>
+   <p class="muted">Un sistema tuo per bere con misura: limiti chiari, blocchi, jolly e premi. Conta quanto rispetti le regole.</p>
+   <div class="card" style="text-align:left">
+    <label>Da quando parte il percorso</label>
+    <input type="date" id="o_start" value="${t}" max="${t}">
+    <label>Periodo senza alcol fino al (facoltativo, svuota per non usarlo)</label>
+    <input type="date" id="o_abs" value="${ab}">
+    <p class="muted small">Le regole di default: massimo 3 unità a serata, 4 ogni 7 giorni, 5 jolly all'anno. Le potrai cambiare nelle impostazioni.</p>
+   </div>
+   <button class="btn pri" data-action="startApp">INIZIA</button></div>`;
+}
+function startApp(){
+  const s=$('#o_start').value||todayStr(),a=$('#o_abs').value||'';
+  S={v:2,start:s,abstainUntil:a,drinks:[],jollies:[],sober:[],rewards:{},checkins:[],settings:defaultSettings(),seenLevel:0};
+  save();render();
+}
+
+// ---------- main render ----------
+const FRASI=['Il tuo fegato ti ringrazia. Anche le tue gambe.','Una sera in meno è una corsa lunga in più.','I muscoli si costruiscono in palestra, ma si rinforzano mentre dormi.','Il sonno è l\'integratore migliore che esista: proteggilo.','Bere meno è allenarsi anche stasera.','Chi dorme bene corre meglio, si controlla meglio, mangia meglio.','Il piacere di domani mattina vale più di un altro giro.','Fermarsi in tempo è un gesto di forza, non di rinuncia.','Il corpo che stai costruendo ti guarda: non deluderlo per un bicchiere.','Ogni regola rispettata è un voto che dai a te stesso.','Le serate migliori sono quelle di cui ricordi tutto.','Peso, sonno e allenamenti si muovono insieme: tira nella direzione giusta.','Non devi essere perfetto: devi essere in regola. E ci stai riuscendo.','Tra 10 anni ringrazierai la persona che sei oggi.'];
+function fraseDelGiorno(){return FRASI[dn(todayStr())%FRASI.length];}
+function trendHtml(C){
+  const t=dn(todayStr()),st=S.settings,W=8,mon=weekStart(t),n=Math.min(W,Math.floor((mon-weekStart(dn(S.start)))/7)+1);
+  const rows=[];
+  for(let i=n-1;i>=0;i--){
+    const m=mon-i*7;let u=0,br=false,jl=false;
+    for(let k=m;k<=m+6&&k<=t;k++){const inf=C.days[k];if(!inf)continue;if(!inf.jolly)u+=inf.units;else jl=true;if(inf.breach)br=true;}
+    const cap=periodAt(m+3,st)==='festivo'?st.festWeek:st.week,sp=periodAt(m+3,st)==='spurgo';
+    const ci=S.checkins.find(c=>c.week===ds(m))||{};
+    rows.push({m:m,u:u,br:br,jl:jl,cap:cap,sp:sp,ci:ci,cur:i===0});
+  }
+  const mx=Math.max(4,...rows.map(r=>Math.max(r.u,r.cap)));
+  const bars=rows.map(r=>'<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-size:11px;font-weight:700">'+(r.u>0?fmtU(r.u):'·')+'</div><div style="position:relative;width:100%;height:84px;display:flex;align-items:flex-end;justify-content:center"><div style="position:absolute;left:0;right:0;bottom:'+(r.cap/mx*84)+'px;border-top:1px dashed var(--line)"></div><div style="width:60%;height:'+Math.max(r.u>0?3:0,r.u/mx*84)+'px;border-radius:5px 5px 0 0;background:'+(r.br?'var(--bad)':r.u>=r.cap-1e-9?'var(--warn)':'var(--ok)')+(r.cur?';outline:1px solid var(--text)':'')+'"></div></div><div style="font-size:10px;color:var(--muted)">'+ds(r.m).slice(8)+'/'+ds(r.m).slice(5,7)+'</div></div>').join('');
+  const withCi=rows.filter(r=>r.ci.sonno||r.ci.peso||r.ci.energia);
+  const tbl=withCi.length?'<table style="width:100%;font-size:12px;margin-top:10px;border-collapse:collapse"><tr style="color:var(--muted);text-align:left"><th>Settimana</th><th>Unità</th><th>Peso</th><th>Sonno</th><th>Energia</th></tr>'+withCi.map(r=>'<tr><td>'+ds(r.m).slice(8)+'/'+ds(r.m).slice(5,7)+'</td><td>'+fmtU(r.u)+'</td><td>'+(r.ci.peso?fmtU(r.ci.peso)+' kg':'–')+'</td><td>'+(r.ci.sonno?fmtU(r.ci.sonno)+' h':'–')+'</td><td>'+(r.ci.energia?r.ci.energia+'/5':'–')+'</td></tr>').join('')+'</table>':'';
+  const lo=withCi.filter(r=>r.ci.sonno&&r.u<=2),hi=withCi.filter(r=>r.ci.sonno&&r.u>2);
+  const av=a=>a.reduce((x,r)=>x+r.ci.sonno,0)/a.length;
+  const ins=(lo.length>=2&&hi.length>=2)?'<div class="small" style="margin-top:8px">💤 Sonno medio: <b>'+fmtU(av(lo))+' h</b> nelle settimane fino a 2 u · <b>'+fmtU(av(hi))+' h</b> con più di 2 u</div>':'';
+  return '<div class="sec">📈 ANDAMENTO · ULTIME '+n+' SETTIMANE</div><div class="card" style="margin-top:0"><div style="display:flex;gap:4px">'+bars+'</div><div class="small muted" style="margin-top:6px">Unità per settimana (lun–dom). Verde: dentro il limite · giallo: al limite · rosso: sforamento. Tratteggio: il tuo limite.</div>'+tbl+ins+'<button class="btn" style="margin-top:10px" data-action="openCheckin">📝 Check-in della settimana</button></div>';
+}
+function checkinModal(){
+  const wk=ds(weekStart(dn(todayStr()))),c=S.checkins.find(x=>x.week===wk)||{};
+  openModal('<h3>Check-in della settimana</h3><p class="muted small">Tre numeri, trenta secondi. Servono a vedere se moderarti ti restituisce sonno, energia e peso.</p>'
+   +'<label>Peso (kg)</label><input type="text" id="c_peso" inputmode="decimal" value="'+(c.peso||'')+'">'
+   +'<label>Sonno medio a notte (ore)</label><input type="text" id="c_sonno" inputmode="decimal" value="'+(c.sonno||'')+'">'
+   +'<label>Energia negli allenamenti (1-5)</label><input type="text" id="c_en" inputmode="numeric" value="'+(c.energia||'')+'">'
+   +'<div class="row"><button class="btn ghost" data-action="closeModal">Annulla</button><button class="btn pri" data-action="saveCheckin">Salva</button></div>');
+}
+function saveCheckin(){
+  const wk=ds(weekStart(dn(todayStr())));
+  const g=id=>{const v=parseFloat(String($('#'+id).value).replace(',','.'));return isNaN(v)?0:v;};
+  const c={week:wk,peso:g('c_peso'),sonno:g('c_sonno'),energia:Math.round(g('c_en'))};
+  if(c.energia&&(c.energia<1||c.energia>5)){toast('Energia da 1 a 5');return;}
+  if(c.sonno&&(c.sonno<2||c.sonno>14)){toast('Sonno non valido');return;}
+  if(c.peso&&(c.peso<30||c.peso>250)){toast('Peso non valido');return;}
+  if(!c.peso&&!c.sonno&&!c.energia){toast('Inserisci almeno un valore');return;}
+  S.checkins=S.checkins.filter(x=>x.week!==wk);S.checkins.push(c);S.checkins.sort((a,b)=>a.week<b.week?-1:1);
+  save();closeModal();render();toast('Check-in salvato ✓');
+}
+function perTxt(p){return fmtMD(p.from)+' → '+fmtMD(p.to);}
+function statusHtml(C){
+  const st=S.settings;let cls=C.kind,title='',desc='';
+  const kindTxt={gameover:'Blocco dopo un game over',breach:'Blocco dopo uno sforamento',full:'Blocco dopo una serata piena',jolly:'Raffreddamento dopo il jolly',zero:'Settimana chiusa dopo una serata piena',abstain:'Periodo senza alcol',spurgo:'Spurgo totale: non posso bere'};
+  const reopen=C.nextFree?'Si riapre: '+fmtDate(C.nextFree):'';
+  if(S.sober.includes(todayStr())&&(C.kind==='open'||C.kind==='empty')){title='💚 Il tuo fegato ti ringrazia';desc='Hai scelto lo spurgo: il budget settimanale resta intatto.';cls='open';}
+  else if(C.kind==='open'){title='';desc='';cls='plain';}
+  else if(C.kind==='empty'){title='🟡 Budget esaurito';desc='Niente alcol oggi. '+reopen+'.';}
+  else if(C.kind==='full'){title='🟠 Serata piena';desc='Per oggi basta. '+(st.zeroAfterFull?'Settimana chiusa fino a '+fmtDate(C.zero.until)+'. ':'')+'Blocco fino a '+fmtDate(C.blk.until)+'.';}
+  else if(C.kind==='jolly'){title='🃏 Oggi è un jolly';desc='Libero dal conteggio, non dalla sicurezza: niente guida. Dopo: '+st.fullLock+' giorni a zero.';}
+  else if(C.kind==='gameover'){title='💀 GAME OVER';desc='Il contatore riparte da zero e i livelli si rifanno da capo. Blocco fino a '+fmtDate(C.blk.until)+'. Si ricomincia da qui.';}
+  else if(C.kind==='breach'){title='⚠️ Sforamento di oggi';desc='Il Mindset riparte da zero. Blocco fino a '+fmtDate(C.blk.until)+'. Averlo registrato è la cosa giusta.';}
+  else if(C.kind==='blocked'&&C.blockedToday.kind==='spurgo'){title='🌿 Spurgo totale';desc='Non posso bere. Fino a '+fmtDate(C.blockedToday.until)+'. '+reopen+'.';}
+  else if(C.kind==='blocked'){title='⛔ Oggi non si beve';desc=kindTxt[C.blockedToday.kind]+'. '+reopen+'.';}
+  else {title='In attesa';desc='Il percorso parte il '+fmtDate(S.start)+'.';cls='open';}
+  const pn=C.per==='festivo'?'<div class="small" style="margin-bottom:6px">🎉 Periodo festivo: fino a '+fmtU(C.evCap)+' u a serata e '+fmtU(C.wkCap)+' a settimana</div>':'';
+  const bud=(C.kind==='notstarted'||C.per==='spurgo')?'':pn+'<div class="bh"><span>Budget della settimana (lun–dom)</span><b>'+fmtU(C.win)+' / '+fmtU(C.wkCap)+' u</b></div><div class="bar sm"><i class="'+(C.win>=C.wkCap?'bad':'')+'" style="width:'+Math.min(100,C.win/C.wkCap*100)+'%"></i></div>';
+  return '<div class="st '+cls+'">'+(title?'<div class="t">'+title+'</div>':'')+(desc?'<div class="d">'+desc+'</div>':'')+bud+'</div>';
+}
+function reviewHtml(C){
+  const st=S.settings,R=C.review;let body='';
+  if(!R.started){body='<div class="d muted small">La verifica parte il '+fmtDate(R.vStart)+', dopo il periodo senza alcol.</div>';}
+  else{
+    body='<div class="bh"><span>Giorno '+Math.min(R.dayNo,st.reviewDays)+' di '+st.reviewDays+'</span><b>'+Math.round(R.progress*100)+'%</b></div><div class="bar sm"><i style="width:'+(R.progress*100)+'%"></i></div>';
+    body+='<div class="small muted" style="margin-top:10px">Finora: <b>'+R.drinkDays+(R.drinkDays===1?' giorno':' giorni')+' con alcol</b> su '+R.rDays+' ('+(R.rDays?Math.round(R.drinkDays/R.rDays*100):0)+'%) · media '+fmtU(R.avgWeek)+' u/settimana · '+R.breaches+' sforamenti · '+R.jollies+' jolly · '+R.sober+' serate senza bere</div>';
+    if(R.done){
+      const bad=R.breaches>=st.reviewLimit;
+      body+='<div class="st '+(bad?'blocked':'open')+'" style="margin:12px 0 0"><div class="t">'+(bad?'Il sistema non sta reggendo':'Il sistema regge')+'</div><div class="d">'+(bad?'Con '+R.breaches+' sforamenti conviene tornare per un periodo all\'astinenza e parlarne con il medico di base.':'Puoi tenere le regole così, oppure rivedere i limiti con calma.')+'</div></div>';
+    }
+  }
+  return '<div class="sec">🔎 VERIFICA A '+st.reviewDays+' GIORNI</div><div class="card" style="margin-top:0">'+body+'</div>';
+}
+function badgesDef(C){
+  const t=dn(todayStr()),so=S.sober.length;
+  const sd=S.sober.map(dn).sort((x,y)=>x-y);
+  const wk=sd.filter(k=>{const g=new Date(k*DAY).getUTCDay();return g===5||g===6;}).length;
+  let bw=0;for(let i=0;i<sd.length;i++){let c=0;for(let j=i;j<sd.length&&sd[j]<sd[i]+7;j++)c++;bw=Math.max(bw,c);}
+  const pts=C.breaches.slice().sort((x,y)=>x-y);let rise=0;
+  pts.forEach((x,i)=>{const end=i+1<pts.length?pts[i+1]:t;rise=Math.max(rise,Math.min(7,end-x));});
+  const lj=S.jollies.reduce((m,j)=>Math.max(m,dn(j.date)),dn(S.start));
+  const free=Math.max(0,t-lj);
+  const R=C.review,rd=S.settings.reviewDays,vd=R.started?Math.min(rd,R.dayNo):0;
+  const mk=(ic,n,d,cur,max)=>({ic:ic,n:n,d:d,cur:Math.min(cur,max),max:max,ok:cur>=max});
+  const arr=[
+   mk('✨','Scintilla','1 spurgo',so,1),
+   mk('🔥','Fiamma','5 spurgo',so,5),
+   mk('🪵','Falò','10 spurgo',so,10),
+   mk('☄️','Incendio','25 spurgo',so,25),
+   mk('🌋','Vulcano','50 spurgo',so,50),
+   mk('👑','Leggenda','100 spurgo',so,100),
+   mk('🌃','Weekend sobrio','1 spurgo di venerdì o sabato',wk,1),
+   mk('🌠','Weekend da campione','5 spurgo di venerdì o sabato',wk,5),
+   mk('📅','Settimana piena','5 spurgo in 7 giorni',bw,5),
+   mk('💪','Rialzata','7 giorni in regola dopo uno sforamento',rise,7),
+   mk('🃏','Jolly in tasca','90 giorni senza usare un jolly',free,90),
+   mk('🧪','Verifica completata',rd+' giorni',vd,rd)
+  ];
+  const last=arr[arr.length-1];last.ok=R.done;if(R.done)last.cur=last.max;
+  return arr;
+}
+function render(){
+  if(!S||!S.start){renderOnboarding();return;}
+  const pm=document.getElementById('map');if(pm)mapKeep=pm.scrollLeft;
+  const C=compute(S,todayStr()),st=S.settings;
+  const lvl=LEVELS[C.lvlIdx],nxt=LEVELS[C.lvlIdx+1];
+  const pct=nxt?Math.round((C.daysN-lvl.d)/(nxt.d-lvl.d)*100):100;
+  // mappa livelli
+  const si=Math.max(1,selLvl===null?C.lvlIdx:selLvl);
+  const mapHtml='<div class="map" id="map"><div class="track">'+LEVELS.map((L,i)=>{
+    if(i===0)return '';
+    const cls=i<C.lvlIdx?'done':(i===C.lvlIdx?'cur':'lock');
+    return '<button class="node '+cls+(i===si?' sel':'')+'" data-action="selLvl" data-i="'+i+'"><span class="circ">'+(cls==='done'?'✓':i)+'</span><span class="nl">'+LBL[i]+'</span></button>';
+  }).join('')+'</div></div>'
+   +'<div class="card lvinfo" style="margin:4px 0 0"><div class="n">LIV. '+si+' · '+LEVELS[si].n+'</div><div class="nt">'+LEVELS[si].note+'</div>'
+   +(S.rewards[si]?'<div class="rw">🎁 Premio: '+esc(S.rewards[si])+'</div>':'<div class="rw muted">Nessun premio impostato (si sceglie nelle Impostazioni)</div>')+'</div>';
+  const bd=badgesDef(C).map(b=>'<div class="bdg '+(b.ok?'':'lock')+'"><div class="ic">'+b.ic+'</div><div class="bn">'+b.n+'</div><div class="bd">'+b.d+'</div>'+(b.ok?'<div class="bd" style="color:var(--ok);font-weight:700;margin-top:6px">✓ Sbloccato</div>':'<div class="bar sm"><i style="width:'+(b.cur/b.max*100)+'%"></i></div><div class="bd">'+b.cur+'/'+b.max+'</div>')+'</div>').join('');
+  // log
+  const dates=new Set();
+  S.drinks.forEach(d=>dates.add(d.date));S.jollies.forEach(j=>dates.add(j.date));S.sober.forEach(s=>dates.add(s));
+  const tNow=dn(todayStr());
+  const dl=[...dates].filter(x=>dn(x)>tNow-LOGDAYS).sort().reverse();
+  const log=dl.map(date=>{
+    const k=dn(date),info=C.days[k]||{units:0,breach:false,full:false,jolly:false,why:[]};
+    const tags=[];
+    if(info.gameOver)tags.push('<span class="tag go">💀 GAME OVER</span>');
+    else if(info.breach)tags.push('<span class="tag bad">SFORAMENTO</span>');
+    if(info.full)tags.push('<span class="tag warn">SERATA PIENA</span>');
+    if(info.jolly)tags.push('<span class="tag warn">🃏 JOLLY</span>');
+    if(S.sober.includes(date))tags.push('<span class="tag ok">🌙 SENZA BERE</span>');
+    const rows=S.drinks.filter(d=>d.date===date).map(d=>'<div class="dr"><span>'+(d.icon||'🍺')+' '+esc(d.name)+'</span><b>'+fmtU(d.units)+' u</b><button class="x" data-action="delDrink" data-id="'+d.id+'">✕</button></div>'+(d.note?'<div class="nt">'+esc(d.note)+'</div>':'')).join('');
+    const jr=S.jollies.filter(j=>j.date===date).map(j=>'<div class="dr"><span>🃏 '+esc(j.reason)+'</span><button class="x" data-action="delJolly" data-id="'+j.id+'">✕</button></div>').join('');
+    const sr=S.sober.includes(date)?'<div class="dr"><span>🌙 Fuori senza bere</span><button class="x" data-action="delSober" data-date="'+date+'">✕</button></div>':'';
+    return '<div class="day"><div class="dh"><b>'+fmtDate(date)+'</b>'+tags.join('')+(info.units>0?'<span class="du">'+fmtU(info.units)+' u</span>':'')+'</div>'+rows+jr+sr+'</div>';
+  }).join('')||'<div class="muted small">Nessuna registrazione negli ultimi '+LOGDAYS+' giorni.</div>';
+  const P=PRESETS.map(p=>p.icon+' '+p.name+' = '+fmtU(p.u)).join('</b> · <b>');
+  const rules='<details class="card"><summary>📜 Le regole</summary><ul>'
+   +'<li><b>Unità</b>: '+PRESETS.map(p=>p.icon+' '+fmtU(p.u)).join(' · ')+' (normale, artigianale, vino, drink, shot).</li>'
+   +'<li><b>Spurgo</b>: premilo la sera per vedere subito salire il giorno. Se non lo premi, il giorno scatta da solo alle 04:00 del mattino dopo. Uno sforamento riporta il contatore a zero.</li>'
+   +'<li><b>Limiti</b>: massimo '+st.evening+' unità a serata e '+st.week+' a settimana (da lunedì a domenica).</li>'
+   +'<li><b>Periodi festivi</b>: '+st.periods.filter(x=>x.kind==='festivo').map(perTxt).join(' · ')+'. Limiti allargati: '+st.festEvening+' a serata, '+st.festWeek+' a settimana.</li>'
+   +'<li><b>Spurgo totale</b>: '+st.periods.filter(x=>x.kind==='spurgo').map(perTxt).join(' · ')+'. Non si beve. Nessun jolly.</li>'
+   +'<li><b>Serata piena</b> (tetto della serata: '+st.evening+' u, nei periodi festivi '+st.festEvening+'): '+(st.zeroAfterFull?'settimana chiusa e ':'')+'blocco di '+st.fullLock+' giorni.</li>'
+   +'<li><b>Game over</b>: '+st.gameOverUnits+' o più unità in una serata ('+st.festWeek+' nei periodi festivi). Come uno sforamento, ma il blocco è di '+st.gameOverLock+' giorni e i livelli si rifanno da capo. Si evita solo con un jolly.</li>'
+   +'<li><b>Sforamento</b>: il Mindset va a zero e scatta un blocco di '+st.breachLock+' giorni.</li>'
+   +'<li><b>Jolly</b>: '+st.jollyPerYear+' all\'anno in totale; scegli ogni volta di che tipo è (Settimana Pesante, Libero, Evento Speciale, Socialità Forzata…). Liberi dal conteggio, non dalla sicurezza (niente guida, niente prima di allenamenti chiave). Poi '+st.fullLock+' giorni a zero.</li>'
+   +'<li><b>Verifica</b>: dopo '+st.reviewDays+' giorni si guardano i numeri. Con '+st.reviewLimit+' o più sforamenti: torna all\'astinenza e parlane con il medico.</li>'
+   +'</ul></details>';
+  const soberToday=S.sober.includes(todayStr()),spWeek=S.sober.filter(x=>dn(x)>tNow-LOGDAYS).length;
+  app.innerHTML=
+   '<div class="top"><div class="logo">🧠 MINDSET QUEST</div><button class="ib" data-action="openSettings">⚙️</button></div>'
+   +'<div class="hero"><div class="flame">🔥</div><div class="big">'+C.daysN+'</div><div class="lbl">GIORNI IN REGOLA</div>'+(C.lvlIdx>0?'<div class="lvl">LIV. '+C.lvlIdx+' · '+lvl.n+'</div>':'')
+   +'<div class="bar"><i style="width:'+pct+'%"></i></div><div class="sub">'+(nxt?(nxt.d-C.daysN)+' giorni a LIV. '+(C.lvlIdx+1)+' · ':'Livello massimo · ')+C.weeks+(C.weeks===1?' settimana':' settimane')+' in regola</div></div>'
+   +statusHtml(C)
+   +'<div class="acts">'
+   +(soberToday
+      ?'<button class="btn wide" style="color:var(--ok);border:1px solid var(--ok)" data-action="delSober" data-date="'+todayStr()+'">🔥 Spurgo fatto ✓</button>'
+      :'<button class="btn pri wide" data-action="sober">🔥 Spurgo</button>')
+   +'<button class="btn" data-action="openAdd"'+(soberToday?' disabled':'')+'>Registra bevuta</button><button class="btn" data-action="openJolly"'+(soberToday?' disabled':'')+'>Usa un jolly</button></div>'
+   +'<div class="small muted" style="text-align:center;margin:12px 6px;font-style:italic">“'+fraseDelGiorno()+'”</div>'
+   +'<div class="spcount">Spurgo: <b>'+spWeek+'</b> negli ultimi '+LOGDAYS+' giorni · '+S.sober.length+' in totale'+(soberToday?' · <button class="undo" style="display:inline;padding:0" data-action="delSober" data-date="'+todayStr()+'">annulla oggi</button>':'')+'</div>'
+   +'<div class="stats"><div class="stat"><b>'+C.best+'</b><span>Miglior serie</span></div><div class="stat"><b>'+C.breaches.length+'</b><span>Sforamenti</span></div><div class="stat"><b>'+C.jollyLeft+'/'+st.jollyPerYear+'</b><span>Jolly rimasti</span></div></div>'
+   +reviewHtml(C)
+   +trendHtml(C)
+   +'<div class="sec">🗺️ MAPPA DEI LIVELLI</div>'+mapHtml
+   +'<div class="sec">🏅 BADGE</div><div class="badges">'+bd+'</div>'
+   +'<div class="sec">📒 REGISTRO · ULTIMI '+LOGDAYS+' GIORNI</div><div class="card" style="margin-top:0">'+log+'</div>'
+   +'<div style="margin-top:12px">'+rules+'</div>'
+   +'<p class="muted small center">App di supporto personale: non sostituisce il parere del medico.</p>';
+  const m=document.getElementById('map');
+  if(m){if(mapKeep!==null)m.scrollLeft=mapKeep;else{const n=m.querySelector('.node.cur');if(n)m.scrollLeft=n.offsetLeft-m.clientWidth/2+n.offsetWidth/2;}}
+  levelCheck(C);
+}
+function levelCheck(C){
+  if(C.lvlIdx>S.seenLevel){
+    S.seenLevel=C.lvlIdx;save();
+    const L=LEVELS[C.lvlIdx],rw=S.rewards[C.lvlIdx];
+    openModal('<div class="center"><div style="font-size:48px">🎉</div><h3>LIVELLO '+C.lvlIdx+' SBLOCCATO</h3><p><b>'+L.n+'</b></p><p class="muted">'+L.note+'</p>'+(rw?'<div class="st jolly"><div class="t">🎁 Il tuo premio</div><div class="d">'+esc(rw)+'</div></div>':'<p class="muted small">Puoi scegliere il premio di ogni livello nelle impostazioni.</p>')+'<button class="btn pri" data-action="closeModal">Avanti</button></div>');
+  }
+}
+
+// ---------- add drink ----------
+function newDraft(){return{preset:'bn',qty:1,date:todayStr(),note:''};}
+function num(v){return parseFloat(String(v).replace(',','.'));}
+function draftUnits(){const p=PRESETS.find(x=>x.id===draft.preset);return p?p.u*draft.qty:0;}
+function addModal(){
+  const t=todayStr();
+  let body='<div class="pg">'+PRESETS.map(p=>'<button class="pp '+(draft.preset===p.id?'on':'')+'" data-action="pickPreset" data-id="'+p.id+'"><b>'+p.icon+' '+fmtU(p.u)+' u</b>'+p.name+'</button>').join('')+'</div>';
+  body+='<label>Quantità</label><div class="qty"><button data-action="qtyMinus">−</button><b>'+draft.qty+'</b><button data-action="qtyPlus">+</button></div>';
+  body+='<label>Giorno</label><input type="date" id="f_date" data-f="date" value="'+draft.date+'" min="'+S.start+'" max="'+t+'">';
+  body+='<label>Contesto o cosa l\'ha scatenata (facoltativo)</label><input id="f_note" data-f="note" placeholder="es. cena con amici, stress, noia" value="'+esc(draft.note)+'">';
+  body+='<div class="tot"><span>Totale</span><span id="f_tot">'+fmtU(draftUnits())+' unità</span></div>';
+  body+='<div class="row"><button class="btn ghost" data-action="closeModal">Annulla</button><button class="btn pri" data-action="saveDrink">Registra</button></div>';
+  openModal('<h3>Registra una bevuta</h3>'+body);
+}
+async function saveDrink(){
+  const u=draftUnits();
+  if(u<=0){toast('Scegli cosa hai bevuto');return;}
+  if(!draft.date||draft.date<S.start||draft.date>todayStr()){toast('Giorno non valido');return;}
+  const pr=PRESETS.find(x=>x.id===draft.preset),name=(draft.qty>1?draft.qty+'× ':'')+pr.name,icon=pr.icon;
+  const entry={id:uid(),date:draft.date,name:name,icon:icon,qty:draft.qty,units:Math.round(u*100)/100,note:draft.note.trim()};
+  const T=todayStr(),before=compute(S,T),S2=clone(S);S2.drinks.push(entry);const after=compute(S2,T),k=dn(entry.date);
+  const newBreach=after.breaches.includes(k)&&!before.breaches.includes(k);
+  const newFull=after.fulls.includes(k)&&!before.fulls.includes(k);
+  const newGO=!!(after.days[k]&&after.days[k].gameOver)&&!(before.days[k]&&before.days[k].gameOver);
+  if(newGO){
+    const why=(after.days[k].why||[]).map(w=>WHY[w]).join(', ')||('almeno '+S.settings.gameOverUnits+' unità in una serata');
+    const ch=await askGameOver(why,periodAt(k,S.settings)==='spurgo'?0:before.jollyLeft);
+    if(ch==='no'||!ch)return;
+    if(ch==='jolly'){
+      const ty=await askJollyType();if(!ty)return;
+      if(!S.jollies.some(j=>j.date===entry.date))S.jollies.push({id:uid(),date:entry.date,type:ty,reason:ty});
+      S.drinks.push(entry);save();closeModal();render();toast('Jolly usato: la serata non conta 🎟️');return;
+    }
+    S.seenLevel=0;S.drinks.push(entry);save();closeModal();render();toast('GAME OVER. Si ricomincia 💀');return;
+  }
+  if(newBreach){
+    const why=(after.days[k].why||[]).map(w=>WHY[w]).join(', ');
+    const ok=await askConfirm('⚠️ Questo è uno sforamento','Motivo: '+why+'.<br><br>Il Mindset torna a 0 e scatta un blocco di '+S.settings.breachLock+' giorni.','Registra comunque',false);
+    if(!ok)return;
+  } else if(newFull){
+    const ok=await askConfirm('🟠 Serata piena','Con questa arrivi a '+S.settings.evening+' unità: '+(S.settings.zeroAfterFull?'la settimana si chiude e ':'')+'scatta un blocco di '+S.settings.fullLock+' giorni (fino a '+fmtDate(after.blk.until)+').','Registra',false);
+    if(!ok)return;
+  }
+  S.drinks.push(entry);save();closeModal();render();
+  toast(newBreach?'Registrato. Si riparte da qui.':'Registrato ✓');
+}
+
+// ---------- jolly ----------
+function jollyModal(){
+  const C=compute(S,todayStr());
+  if(C.jollyLeft<=0){toast('Hai finito i jolly di quest\'anno');return;}
+  const t=todayStr(),min=ds(Math.max(dn(S.start),dn(t)-14));
+  if(periodAt(dn(t),S.settings)==='spurgo'){toast('Durante lo spurgo totale non ci sono jolly');return;}
+  const tal=jollyTally();
+  jdraft={date:t,reason:JTYPES[3],free:''};
+  openModal('<h3>Usa un jolly</h3><p class="muted small">Te ne restano '+C.jollyLeft+' su '+S.settings.jollyPerYear+' (ultimi 12 mesi). Il giorno è libero dal conteggio, non dalla sicurezza: niente guida, niente prima di un allenamento chiave. Dopo scattano '+S.settings.fullLock+' giorni a zero. Il Mindset non si azzera.</p>'
+   +'<label>Giorno</label><input type="date" id="j_date" data-j="date" value="'+t+'" min="'+min+'" max="'+t+'">'
+   +'<label>Tipo di jolly</label><div class="chips">'+JTYPES.map(r=>'<button class="'+(r===jdraft.reason?'on':'')+'" data-action="pickReason" data-r="'+esc(r)+'">'+r+(tal[r]?' · '+tal[r]+'×':'')+'</button>').join('')+'</div>'
+   +'<label>Dettaglio (facoltativo)</label><input data-j="free" placeholder="es. cena con i colleghi">'
+   +'<div class="row"><button class="btn ghost" data-action="closeModal">Annulla</button><button class="btn pri" data-action="saveJolly">Usa il jolly</button></div>');
+}
+function saveJolly(){
+  if(!jdraft.date||jdraft.date<S.start||jdraft.date>todayStr()){toast('Giorno non valido');return;}
+  if(S.jollies.some(j=>j.date===jdraft.date)){toast('Quel giorno ha già un jolly');return;}
+  if(periodAt(dn(jdraft.date),S.settings)==='spurgo'){toast('Durante lo spurgo totale non ci sono jolly');return;}
+  const reason=jdraft.reason+(jdraft.free.trim()?' · '+jdraft.free.trim():'');
+  S.jollies.push({id:uid(),date:jdraft.date,type:jdraft.reason,reason:reason});
+  save();closeModal();render();toast('Jolly usato 🃏');
+}
+
+// ---------- settings ----------
+function fmtMD(x){const a=x.split('-');return a[1]+'/'+a[0];}
+function parseMD(x){const m=/^\s*(\d{1,2})\s*[\/.-]\s*(\d{1,2})\s*$/.exec(x||'');if(!m)return null;const d=+m[1],mo=+m[2];if(mo<1||mo>12||d<1||d>31)return null;return String(mo).padStart(2,'0')+'-'+String(d).padStart(2,'0');}
+function settingsModal(){
+  const st=S.settings;
+  const f=(id,label,v,step)=>'<div><label>'+label+'</label><input type="number" id="'+id+'" inputmode="decimal" step="'+(step||1)+'" value="'+v+'"></div>';
+  openModal('<h3>⚙️ Impostazioni</h3>'
+   +'<label>Inizio percorso</label><input type="date" id="s_start" value="'+S.start+'" max="'+todayStr()+'">'
+   +'<label>Periodo senza alcol fino al</label><input type="date" id="s_abs" value="'+S.abstainUntil+'">'
+   +'<div class="sec">LIMITI</div><div class="g2">'
+   +f('s_evening','Unità max a serata',st.evening,0.5)+f('s_week','Unità max a settimana',st.week,0.5)
+   +f('s_festEv','Unità a serata (festivo)',st.festEvening,0.5)+f('s_festWk','Unità a settimana (festivo)',st.festWeek,0.5)+f('s_fullLock','Giorni di blocco (serata piena)',st.fullLock)
+   +f('s_breachLock','Giorni di blocco (sforamento)',st.breachLock)+f('s_jolly','Jolly all\'anno',st.jollyPerYear)
+   +f('s_go','Unità per il game over',st.gameOverUnits,0.5)+f('s_goLock','Giorni di blocco (game over)',st.gameOverLock)
+   +f('s_rev','Giorni di verifica',st.reviewDays)+f('s_revLim','Sforamenti per allarme',st.reviewLimit)
+   +'</div><label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="s_zero" '+(st.zeroAfterFull?'checked':'')+'> Serata piena = settimana chiusa</label>'
+   +'<div class="sec">📅 PERIODI (ogni anno, gg/mm)</div>'
+   +st.periods.map((q,i)=>'<div class="g2"><div><label>'+(q.kind==='spurgo'?'🌿 Spurgo totale · dal':'🎉 Festivo · dal')+'</label><input id="p_f'+i+'" value="'+fmtMD(q.from)+'" placeholder="gg/mm"></div><div><label>'+(q.kind==='spurgo'?'al (escluso)':'al (incluso)')+'</label><input id="p_t'+i+'" value="'+fmtMD(q.to)+'" placeholder="gg/mm"></div></div>').join('')
+   +'<div class="sec">🎁 PREMI PER LIVELLO</div>'
+   +LEVELS.map((L,i)=>i===0?'':'<label>LIV. '+i+' · '+L.n+' ('+L.d+' gg)</label><input id="r_'+i+'" placeholder="Il premio che ti dai" value="'+esc(S.rewards[i]||'')+'">').join('')
+   +'<div class="row"><button class="btn ghost" data-action="closeModal">Chiudi</button><button class="btn pri" data-action="saveSettings">Salva</button></div>'
+   +'<div class="sec">DATI</div><div class="g2"><button class="btn" data-action="exportData">Esporta</button><button class="btn" data-action="importData">Importa</button></div>'
+   +'<input type="file" id="imp" accept=".json,application/json" style="display:none">'
+   +'<div class="row"><button class="btn danger" data-action="resetAll">Cancella tutto e ricomincia</button></div>');
+  $('#imp').addEventListener('change',e=>{
+    const file=e.target.files[0];if(!file)return;
+    const r=new FileReader();
+    r.onload=async()=>{try{const o=migrate(JSON.parse(r.result));if(!o)throw 0;const ok=await askConfirm('Importare i dati?','I dati attuali verranno sostituiti.','Importa',true);if(!ok)return;S=o;save();closeModal();render();toast('Dati importati');}catch(err){toast('File non valido');}};
+    r.readAsText(file);
+  });
+}
+function saveSettings(){
+  const g=id=>num($('#'+id).value);
+  const v={evening:g('s_evening'),week:g('s_week'),festEvening:g('s_festEv'),festWeek:g('s_festWk'),fullLock:g('s_fullLock'),breachLock:g('s_breachLock'),gameOverUnits:g('s_go'),gameOverLock:g('s_goLock'),jollyPerYear:g('s_jolly'),reviewDays:g('s_rev'),reviewLimit:g('s_revLim')};
+  for(const k in v){if(!(v[k]>=0)||isNaN(v[k])){toast('Controlla i valori numerici');return;}}
+  if(v.evening<=0||v.week<=0||v.festEvening<=0||v.festWeek<=0||v.reviewDays<1){toast('Valori non validi');return;}
+  const np=[];
+  for(let i=0;i<S.settings.periods.length;i++){const a=parseMD($('#p_f'+i).value),b=parseMD($('#p_t'+i).value);if(!a||!b){toast('Date dei periodi non valide (gg/mm)');return;}np.push({kind:S.settings.periods[i].kind,from:a,to:b});}
+  const start=$('#s_start').value||S.start;
+  if(start>todayStr()){toast('L\'inizio non può essere nel futuro');return;}
+  Object.assign(S.settings,v);S.settings.periods=np;S.settings.zeroAfterFull=$('#s_zero').checked;
+  S.start=start;S.abstainUntil=$('#s_abs').value||'';
+  LEVELS.forEach((L,i)=>{const el=$('#r_'+i);if(!el)return;const val=el.value.trim();if(val)S.rewards[i]=val;else delete S.rewards[i];});
+  save();closeModal();render();toast('Salvato ✓');
+}
+function exportData(){
+  const blob=new Blob([JSON.stringify(S,null,1)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='mindset-quest-backup.json';
+  document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},500);
+}
+
+// ---------- events ----------
+document.addEventListener('click',async e=>{
+  const el=e.target.closest('[data-action]');if(!el)return;
+  const a=el.dataset.action;
+  switch(a){
+   case 'startApp':startApp();break;
+   case 'selLvl':selLvl=+el.dataset.i;render();break;
+   case 'closeModal':closeModal();break;
+   case 'cfYes':{const r=confirmResolve;confirmResolve=null;$('#modal').innerHTML='';document.body.classList.remove('lock');if(r)r(true);break;}
+   case 'cfNo':closeModal();break;
+   case 'goJolly':goAnswer('jolly');break;
+   case 'goYes':goAnswer('go');break;
+   case 'goNo':closeModal();break;
+   case 'jtPick':{const r=jtResolve;jtResolve=null;$('#modal').innerHTML='';document.body.classList.remove('lock');if(r)r(JTYPES[+el.dataset.i]);break;}
+   case 'openAdd':if(S.sober.includes(todayStr())){toast('Oggi hai fatto spurgo: annullalo se vuoi registrare');break;}draft=newDraft();addModal();break;
+   case 'pickPreset':draft.preset=el.dataset.id;addModal();break;
+   case 'qtyPlus':draft.qty=Math.min(10,draft.qty+1);addModal();break;
+   case 'qtyMinus':draft.qty=Math.max(1,draft.qty-1);addModal();break;
+   case 'saveDrink':saveDrink();break;
+   case 'openJolly':if(S.sober.includes(todayStr())){toast('Oggi hai fatto spurgo: annullalo se vuoi usare un jolly');break;}jollyModal();break;
+   case 'pickReason':jdraft.reason=el.dataset.r;el.parentNode.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b===el));break;
+   case 'saveJolly':saveJolly();break;
+   case 'openSettings':settingsModal();break;
+   case 'openCheckin':checkinModal();break;
+   case 'saveCheckin':saveCheckin();break;
+   case 'saveSettings':saveSettings();break;
+   case 'exportData':exportData();break;
+   case 'importData':$('#imp').click();break;
+   case 'resetAll':{const ok=await askConfirm('Cancellare tutto?','Registro, jolly e premi verranno eliminati. Non si può annullare.','Cancella',true);if(ok){S=null;try{localStorage.removeItem(KEY);}catch(x){}render();}break;}
+   case 'sober':{
+     const t=todayStr();
+     if(S.sober.includes(t)){toast('Già segnata per oggi');break;}
+     if(S.drinks.some(d=>d.date===t)){toast('Oggi hai già registrato delle bevute');break;}
+     S.sober.push(t);save();render();toast('Giorno '+compute(S,todayStr()).daysN+' in regola 🔥');break;}
+   case 'delDrink':{const ok=await askConfirm('Eliminare la bevuta?','Il conteggio verrà ricalcolato.','Elimina',true);if(ok){S.drinks=S.drinks.filter(d=>d.id!==el.dataset.id);save();render();}break;}
+   case 'delJolly':{const ok=await askConfirm('Annullare il jolly?','Il jolly torna disponibile e il giorno viene ricalcolato con le regole normali.','Annulla jolly',true);if(ok){S.jollies=S.jollies.filter(j=>j.id!==el.dataset.id);save();render();}break;}
+   case 'delSober':{S.sober=S.sober.filter(d=>d!==el.dataset.date);save();render();break;}
+  }
+});
+document.addEventListener('input',e=>{
+  const f=e.target.dataset;
+  if(f.f&&draft){draft[f.f]=e.target.value;}
+  if(f.j&&jdraft)jdraft[f.j]=e.target.value;
+});
+render();
+</script>
+</body>
+</html>
