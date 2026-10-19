@@ -47,6 +47,15 @@ h1,h2,h3{margin:0}
 .bh b{color:var(--text)}
 .acts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
 .acts .wide{grid-column:1/3}
+.fl{display:inline-block}
+@keyframes flick{0%,100%{transform:scale(1) rotate(-3deg)}20%{transform:scale(1.18,1.28) rotate(4deg)}45%{transform:scale(.95,1.1) rotate(-5deg)}70%{transform:scale(1.12,1.22) rotate(3deg)}}
+.btn.pri.spg{animation:glow 2s ease-in-out infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(255,122,80,.0)}50%{box-shadow:0 0 22px 4px rgba(255,122,80,.55)}}
+.burst{position:fixed;z-index:60;pointer-events:none;font-size:22px;animation:rise 1.3s ease-out forwards}
+@keyframes rise{0%{opacity:0;transform:translate(0,0) scale(.4)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx),-170px) scale(1.4) rotate(var(--rot))}}
+.bump{animation:bump .6s ease-out}
+@keyframes bump{0%{transform:scale(1)}35%{transform:scale(1.25)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.fl,.btn.pri.spg,.burst,.bump{animation:none!important}}
 .btn{border:0;border-radius:14px;padding:14px;font-size:15px;font-weight:700;color:var(--text);background:var(--card2);cursor:pointer;width:100%}
 .btn.pri{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#1a1030}
 .btn.ghost{background:transparent;border:1px solid var(--line)}
@@ -354,6 +363,20 @@ function startApp(){
 // ---------- main render ----------
 const FRASI=['Il tuo fegato ti ringrazia. Anche le tue gambe.','Una sera in meno è una corsa lunga in più.','I muscoli si costruiscono in palestra, ma si rinforzano mentre dormi.','Il sonno è l\'integratore migliore che esista: proteggilo.','Bere meno è allenarsi anche stasera.','Chi dorme bene corre meglio, si controlla meglio, mangia meglio.','Il piacere di domani mattina vale più di un altro giro.','Fermarsi in tempo è un gesto di forza, non di rinuncia.','Il corpo che stai costruendo ti guarda: non deluderlo per un bicchiere.','Ogni regola rispettata è un voto che dai a te stesso.','Le serate migliori sono quelle di cui ricordi tutto.','Peso, sonno e allenamenti si muovono insieme: tira nella direzione giusta.','Non devi essere perfetto: devi essere in regola. E ci stai riuscendo.','Tra 10 anni ringrazierai la persona che sei oggi.'];
 function fraseDelGiorno(){return FRASI[dn(todayStr())%FRASI.length];}
+function spurgoBurst(){
+  try{
+    const b=document.querySelector('.acts .wide');if(!b)return;
+    const r=b.getBoundingClientRect(),ems=['🔥','🔥','✨','🔥','💚'];
+    for(let i=0;i<16;i++){
+      const e=document.createElement('div');e.className='burst';e.textContent=ems[i%ems.length];
+      e.style.left=(r.left+r.width*(0.15+0.7*Math.random()))+'px';e.style.top=(r.top+r.height/2)+'px';
+      e.style.setProperty('--dx',(Math.random()*120-60)+'px');e.style.setProperty('--rot',(Math.random()*60-30)+'deg');
+      e.style.animationDelay=(Math.random()*0.25)+'s';
+      document.body.appendChild(e);setTimeout(()=>e.remove(),1800);
+    }
+    const n=document.querySelector('.hero .big');if(n)n.classList.add('bump');
+  }catch(e){}
+}
 function trendHtml(C){
   const t=dn(todayStr()),st=S.settings,W=8,mon=weekStart(t),n=Math.min(W,Math.floor((mon-weekStart(dn(S.start)))/7)+1);
   const rows=[];
@@ -507,8 +530,8 @@ function render(){
    +statusHtml(C)
    +'<div class="acts">'
    +(soberToday
-      ?'<button class="btn wide" style="color:var(--ok);border:1px solid var(--ok)" data-action="delSober" data-date="'+todayStr()+'">🔥 Spurgo fatto ✓</button>'
-      :'<button class="btn pri wide" data-action="sober">🔥 Spurgo</button>')
+      ?'<button class="btn wide" style="color:var(--ok);border:1px solid var(--ok)" data-action="delSober" data-date="'+todayStr()+'"><span class="fl">🔥</span> Spurgo fatto ✓</button>'
+      :'<button class="btn pri wide spg" data-action="sober"><span class="fl">🔥</span> Spurgo</button>')
    +'<button class="btn" data-action="openAdd"'+(soberToday?' disabled':'')+'>Registra bevuta</button><button class="btn" data-action="openJolly"'+(soberToday?' disabled':'')+'>Usa un jolly</button></div>'
    +'<div class="small muted" style="text-align:center;margin:12px 6px;font-style:italic">“'+fraseDelGiorno()+'”</div>'
    +'<div class="spcount">Spurgo: <b>'+spWeek+'</b> negli ultimi '+LOGDAYS+' giorni · '+S.sober.length+' in totale'+(soberToday?' · <button class="undo" style="display:inline;padding:0" data-action="delSober" data-date="'+todayStr()+'">annulla oggi</button>':'')+'</div>'
@@ -686,7 +709,7 @@ document.addEventListener('click',async e=>{
      const t=todayStr();
      if(S.sober.includes(t)){toast('Già segnata per oggi');break;}
      if(S.drinks.some(d=>d.date===t)){toast('Oggi hai già registrato delle bevute');break;}
-     S.sober.push(t);save();render();toast('Giorno '+compute(S,todayStr()).daysN+' in regola 🔥');break;}
+     S.sober.push(t);save();render();spurgoBurst();toast('Giorno '+compute(S,todayStr()).daysN+' in regola 🔥');break;}
    case 'delDrink':{const ok=await askConfirm('Eliminare la bevuta?','Il conteggio verrà ricalcolato.','Elimina',true);if(ok){S.drinks=S.drinks.filter(d=>d.id!==el.dataset.id);save();render();}break;}
    case 'delJolly':{const ok=await askConfirm('Annullare il jolly?','Il jolly torna disponibile e il giorno viene ricalcolato con le regole normali.','Annulla jolly',true);if(ok){S.jollies=S.jollies.filter(j=>j.id!==el.dataset.id);save();render();}break;}
    case 'delSober':{S.sober=S.sober.filter(d=>d!==el.dataset.date);save();render();break;}
